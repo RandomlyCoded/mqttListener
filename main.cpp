@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
     client = new QMqttClient(&a);
 
-    QSettings set("settings.ini", QSettings::IniFormat);
+    QSettings set("settings.ini", QSettings::IniFormat, &a);
     if(set.allKeys().isEmpty()) {
         set.setValue("host", "127.0.0.1");
         set.setValue("port", 1883);
